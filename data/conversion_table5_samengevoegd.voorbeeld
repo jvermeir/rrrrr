@@ -1,0 +1,35 @@
+gene_names;protein_names;ksmbr_number;kust_number;accession_number
+2 rijen samenvoegen als
+		accession_number gelijk is
+
+vb, deze 3
+tnpA_1;similar to transposase;KSMBR1_0067;kustc0800;A0A2C9C9Q1
+tnpA_1;similar to transposase;KSMBR1_0067;kustc0953;A0A2C9C9Q1
+tnpA_1;similar to transposase;KSMBR1_0067;kustc1163;A0A2C9C9Q1
+worden
+tnpA_1;similar to transposase;KSMBR1_0067;kustc0800 kustc0953 kustc1163;A0A2C9C9Q1
+
+
+tnpA_1;similar to transposase;KSMBR1_0067;kustc0800;A0A2C9C9Q1
+tnpA_1;similar to transposase;KSMBR1_0067;kustc0953;A0A2C9C9Q1
+tnpA_1;similar to transposase;KSMBR1_0067;kustc1163;A0A2C9C9Q1
+tnpA_1;similar to transposasebliep;KSMBR1_0077;kustc0800;A0A2C9C9Q1
+tnpA_2;similar to transposase;KSMBR1_0077;kustc0953;A0A2C9C9Q1
+tnpA_1;similar to transposase;KSMBR1_0077;kustc1163;A0A2C9C9Q1
+wordt
+tnpA_2,tnpA_1;similar to transposase, similar to transposasebliep;KSMBR1_0067 KSMBR1_0077;kustc0800 kustc0953 kustc1163;A0A2C9C9Q1
+
+input:
+tnpA_1;A0A2C9C9Q1
+tnpA_1;A0A2C9C9Q1
+tnpA_1;A0A2C9C9Q1
+
+cat conversion_table5.csv | awk '{split($0,a,";"); print a[1] "," a[5]}' |sort -u > combinaties.csv
+
+cat combinaties.csv |
+awk '{print $1} | sort uniq | wc -l
+
+cat combinaties.csv |
+awk '{print $2} | sort uniq | wc -l
+
+

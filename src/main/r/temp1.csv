@@ -1,0 +1,5 @@
+accession_number;gene_names;protein_names;ksmbr_number;kust_number
+acc 1;gene 1;protein 1;ksmbr 1;kust 1
+NA;gene 2;protein 2;ksmbr 2;kust 2
+NA;gene 3;protein 3;ksmbr 3;kust 3
+NA;gene 3;protein 3;ksmbr 3b;kust 3
